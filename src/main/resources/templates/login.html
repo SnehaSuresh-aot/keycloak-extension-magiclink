@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+</head>
+<body>
+<h1>Login with Magic Link</h1>
+
+<!-- Success message -->
+<p th:if="${successMessage}" th:text="${successMessage}" style="color: green;"></p>
+
+
+<!-- Login form -->
+<form action="/auth/generate-magic-link" method="post">
+    <label for="email">Enter your email:</label>
+    <input type="email" id="email" name="email" required>
+    <button type="submit">Generate Magic Link</button>
+</form>
+
+<!-- Error message (if any) -->
+<p th:if="${error}" th:text="${error}" style="color: red;"></p>
+
+</body>
+</html>
